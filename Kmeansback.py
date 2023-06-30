@@ -78,7 +78,13 @@ for i in range(len(cluster_points)):
     print("the cluster "+ str(i+1) + " has  the elements")
     print(cluster_points[i])
     print("*********************************************")
-
+colors=['yellow','red','blue','green','dark green','black','cyan']
+import matplot.pyplot as plt
+for i in range(len(cluster_points)):
+    s100=cluster_points[i]
+    plt.scatter(s100[0],s100[1],color=colors)
+    plt.xlabel('X COORDINATE')
+    plt.ylabel('Y COORDINATE')
 
 
 
