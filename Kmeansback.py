@@ -78,7 +78,31 @@ for i in range(len(cluster_points)):
     print("the cluster "+ str(i+1) + " has  the elements")
     print(cluster_points[i])
     print("*********************************************")
-colors=['yellow','red','blue','green','dark green','black','cyan']
+
+#for plotting the scatter plot
+import matplotlib.pyplot as plt
+import numpy as np
+xa1=[]
+ya1=[]
+colors=np.array(['yellow','red','blue','green','dark green','black','cyan'])
+for i in range(len(cluster_points)):
+    z=cluster_points[i]
+    xa=[]
+    ya=[]
+    for j in range(len(z)):
+        x4=z[j]
+        xa.append(x4[0])
+        ya.append(x4[1])
+    plt.scatter(xa,ya,color=colors[i])
+for i in range(len(median_coordinate)):#now we plot the medians also
+    z=median_coordinate[i]
+    xa1.append(z[0])
+    ya1.append(z[1])
+plt.scatter(xa1,ya1,color='black')
+plt.xlabel("X COORDINATE")
+plt.ylabel("Y COORDINATE")
+plt.show()
+
 
 
 
